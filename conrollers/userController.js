@@ -52,7 +52,7 @@ const loginUser = async (req, res) => {
             .json({ message: "success", data: userObject });
     } catch (err) {
         res.status(500)
-            .json({ message: "Internal server error" });
+            .json({ message: "Internal server error",err});
     }
 }
 

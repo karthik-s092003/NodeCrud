@@ -63,10 +63,24 @@ const deleteById = async (req, res) => {
             .json({ message: "Internal server error" });
     }
 }
+
+const helloworld = (req,res)=>{
+    try {
+        
+        res.status(200).json({message:"Hello world"})
+    } catch (error) {
+        console.log("here");
+        
+        res.status(500)
+        .json({ message: "Internal server error",error });
+    }
+}
+
 module.exports = {
     createProduct,
     getProducts,
     getProductById,
     updateProductById,
-    deleteById
+    deleteById,
+    helloworld
 }
